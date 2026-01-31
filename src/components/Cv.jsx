@@ -1,7 +1,16 @@
 import MyImage from "../assets/heloo.jpg";
+import cv from "../assets/cv.pdf";
 import { FaFacebookF, FaLinkedinIn, FaInstagram, FaGithub,  } from "react-icons/fa";
 
 function Cv(){
+  
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = cv;
+    link.download = "Ibrahim_Zeidan_CV.pdf";
+    link.click();
+  };
+
 return(
 
    <div className="flex bg-[#2C3E50]">
@@ -41,7 +50,7 @@ return(
 
           <hr className="text-white  mt-2 mb-2 " />
 
-          <button className="
+          <button onClick={handleDownload} className="
             w-full
             py-3
             text-white
