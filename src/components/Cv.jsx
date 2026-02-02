@@ -1,4 +1,4 @@
-import MyImage from "../assets/heloo.jpg";
+import MyImage from "../assets/profilepic.jpeg";
 import cv from "../assets/cv.pdf";
 import { FaFacebookF, FaLinkedinIn, FaInstagram, FaGithub,  } from "react-icons/fa";
 
@@ -17,7 +17,7 @@ return(
       <div className="sticky top-0 h-screen ml-8 shadow-2xl">
         <div className="text-center w-80 px-4">
 
-          <div className="mb-4 ">
+          <div className="mb-4 w-full h-56 rounded-xl overflow-hidden flex items-center justify-center ">
             <img
               src={MyImage}
               alt="Portfolio"
