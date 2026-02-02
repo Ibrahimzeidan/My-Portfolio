@@ -1,9 +1,44 @@
 import MyImage from "../assets/profilepic.jpeg";
 import cv from "../assets/cv.pdf";
-import { FaFacebookF, FaLinkedinIn, FaInstagram, FaGithub,  } from "react-icons/fa";
+import { FaFacebookF, FaLinkedinIn, FaInstagram, FaGithub } from "react-icons/fa";
+import { useEffect, useState } from "react";
 
-function Cv(){
-  
+function Cv() {
+  const words = ["Full Stack Developer", "React Developer", "App Developer"];
+
+  const [wordIndex, setWordIndex] = useState(0);
+  const [text, setText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentWord = words[wordIndex];
+
+    const typingSpeed = 90;
+    const deletingSpeed = 50;
+    const pauseAfterTyping = 1000;
+
+    let timeoutId;
+
+    if (!isDeleting && text === currentWord) {
+      timeoutId = setTimeout(() => setIsDeleting(true), pauseAfterTyping);
+    } else {
+      timeoutId = setTimeout(() => {
+        setText((prev) =>
+          isDeleting
+            ? currentWord.substring(0, prev.length - 1)
+            : currentWord.substring(0, prev.length + 1)
+        );
+
+        if (isDeleting && text === "") {
+          setIsDeleting(false);
+          setWordIndex((prev) => (prev + 1) % words.length);
+        }
+      }, isDeleting ? deletingSpeed : typingSpeed);
+    }
+
+    return () => clearTimeout(timeoutId);
+  }, [text, isDeleting, wordIndex]);
+
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = cv;
@@ -11,63 +46,86 @@ function Cv(){
     link.click();
   };
 
-return(
-
-   <div className="flex bg-[#2C3E50]">
+  return (
+    <div className="flex bg-[#2C3E50]">
+      {/* Left Sticky CV */}
       <div className="sticky top-0 h-screen ml-8 shadow-2xl">
-        <div className="text-center w-80 px-4">
+        {/* Full height column */}
+        <div className="text-center w-80 px-4 h-full flex flex-col">
+          
+          {/* TOP PART */}
+          <div>
+            <div className="mb-4 w-full h-56 rounded-xl overflow-hidden flex items-center justify-center">
+              <img src={MyImage} alt="Portfolio" className="w-full rounded-lg" />
+            </div>
 
-          <div className="mb-4 w-full h-56 rounded-xl overflow-hidden flex items-center justify-center ">
-            <img
-              src={MyImage}
-              alt="Portfolio"
-              className="w-full rounded-lg"
-            />
+            <p className="text-2xl text-[#00B87B] font-bold mb-2">
+              Ibrahim Zeidan
+            </p>
+
+            <p className="font-bold text-2xl text-white mb-6">
+              {text}
+              <span className="text-[#00B87B] animate-pulse">|</span>
+            </p>
           </div>
 
-          <p className="text-2xl text-[#00B87B] font-bold mb-2">
-            Ibrahim Zeidan
-          </p>
+          {/* BOTTOM PART (STICKY INSIDE THIS COLUMN) */}
+          <div className="mt-auto pb-4">
+            <div className="flex justify-center gap-3 text-3xl cursor-pointer">
+              <a
+                href="https://github.com/Ibrahimzeidan"
+                className="w-10 h-10 bg-white/10 flex items-center justify-center rounded hover:bg-[#00B87B] transition text-white"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaGithub />
+              </a>
 
-          <p className="font-bold text-2xl text-white mb-6">
-            Full Stack Developer
-          </p>
+              <a
+                href="https://www.facebook.com/ibrahim.zaidan.946"
+                className="w-10 h-10 bg-white/10 flex items-center justify-center rounded hover:bg-[#00B87B] transition text-white"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaFacebookF />
+              </a>
 
-          <div className="flex justify-center gap-3 text-3xl cursor-pointer mt-70 ">
-            <a href="https://github.com/Ibrahimzeidan"className="w-10 h-10 bg-white/10 flex items-center justify-center rounded hover:bg-[#00B87B] transition cursor-pointer text-white">
-            <FaGithub />
-          </a>
-          <a href= "https://www.facebook.com/ibrahim.zaidan.946" className="w-10 h-10 bg-white/10 flex items-center justify-center rounded hover:bg-[#00B87B] transition cursor-pointer text-white">
-            <FaFacebookF />
-          </a>
-          <a href="https://www.linkedin.com/in/ibrahim-zeidan-09532835b/" className="w-10 h-10 bg-white/10 flex items-center justify-center rounded hover:bg-[#00B87B] transition cursor-pointer text-white">
-            <FaLinkedinIn />
-          </a>
-          <a href="https://www.instagram.com/ibrahim_ziadan/" className="w-10 h-10 bg-white/10 flex items-center justify-center rounded hover:bg-[#00B87B] transition cursor-pointer text-white">
-            <FaInstagram />
-          </a>
+              <a
+                href="https://www.linkedin.com/in/ibrahim-zeidan-09532835b/"
+                className="w-10 h-10 bg-white/10 flex items-center justify-center rounded hover:bg-[#00B87B] transition text-white"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaLinkedinIn />
+              </a>
+
+              <a
+                href="https://www.instagram.com/ibrahim_ziadan/"
+                className="w-10 h-10 bg-white/10 flex items-center justify-center rounded hover:bg-[#00B87B] transition text-white"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaInstagram />
+              </a>
+            </div>
+
+            <hr className="text-white mt-4 mb-3" />
+
+            <button
+              onClick={handleDownload}
+              className="w-full py-3 text-white border border-white rounded-lg cursor-pointer transition hover:bg-[#00B87B]"
+            >
+              Download CV
+            </button>
           </div>
 
-          <hr className="text-white  mt-2 mb-2 " />
+        </div>
+      </div>
 
-          <button onClick={handleDownload} className="
-            w-full
-            py-3
-            text-white
-            border border-white
-            rounded-lg
-            cursor-pointer
-            transition
-            hover:bg-[#00B87B] 
-          ">
-            Download CV
-          </button>
-
-        </div>
-        </div>
-        </div>
-        
-     
-)
+      {/* Right side content */}
+      <div className="flex-1">{/* other components */}</div>
+    </div>
+  );
 }
-export default Cv
+
+export default Cv;
