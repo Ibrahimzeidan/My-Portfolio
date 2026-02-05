@@ -46,18 +46,17 @@ function Cv() {
     link.click();
   };
 
-  return (
-    <div className="bg-[#2C3E50]">
-      {/* Wrapper */}
-      <div className="w-full md:w-[320px] lg:w-80 md:sticky md:top-0 md:h-screen md:ml-8 shadow-2xl">
-        <div className="text-center w-full px-4 sm:px-6 md:px-4 h-full flex flex-col py-6 md:py-0">
-          {/* Top */}
+    return (
+    <div className="w-full md:w-70 md:">
+      <div className="bg-[#2C3E50] md:sticky md:top-6 md:h-[calc(100vh-3rem)] shadow-2xl rounded-xl">
+        <div className="text-center px-4 h-full flex flex-col py-6">
+
           <div>
             <div className="mb-4 w-full h-48 sm:h-56 rounded-xl overflow-hidden flex items-center justify-center">
               <img
                 src={MyImage}
                 alt="Portfolio"
-                className="w-full h-full object-cover rounded-xl"
+                className="w-full h-full object-cover"
               />
             </div>
 
@@ -71,8 +70,7 @@ function Cv() {
             </p>
           </div>
 
-          {/* Bottom */}
-          <div className="mt-6 md:mt-auto pb-4">
+          <div className="mt-auto pb-4">
             <div className="flex justify-center gap-3 text-2xl sm:text-3xl cursor-pointer">
               <a
                 href="https://github.com/Ibrahimzeidan"
@@ -120,10 +118,10 @@ function Cv() {
               Download CV
             </button>
           </div>
+
         </div>
       </div>
     </div>
   );
 }
-
 export default Cv;
