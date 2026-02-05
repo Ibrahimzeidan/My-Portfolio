@@ -47,31 +47,33 @@ function Cv() {
   };
 
   return (
-    <div className="flex bg-[#2C3E50]">
-      {/* Left Sticky CV */}
-      <div className="sticky top-0 h-screen ml-8 shadow-2xl">
-        {/* Full height column */}
-        <div className="text-center w-80 px-4 h-full flex flex-col">
-          
-          {/* TOP PART */}
+    <div className="bg-[#2C3E50]">
+      {/* Wrapper */}
+      <div className="w-full md:w-[320px] lg:w-80 md:sticky md:top-0 md:h-screen md:ml-8 shadow-2xl">
+        <div className="text-center w-full px-4 sm:px-6 md:px-4 h-full flex flex-col py-6 md:py-0">
+          {/* Top */}
           <div>
-            <div className="mb-4 w-full h-56 rounded-xl overflow-hidden flex items-center justify-center">
-              <img src={MyImage} alt="Portfolio" className="w-full rounded-lg" />
+            <div className="mb-4 w-full h-48 sm:h-56 rounded-xl overflow-hidden flex items-center justify-center">
+              <img
+                src={MyImage}
+                alt="Portfolio"
+                className="w-full h-full object-cover rounded-xl"
+              />
             </div>
 
-            <p className="text-2xl text-[#00B87B] font-bold mb-2">
+            <p className="text-xl sm:text-2xl text-[#00B87B] font-bold mb-2">
               Ibrahim Zeidan
             </p>
 
-            <p className="font-bold text-2xl text-white mb-6">
+            <p className="font-bold text-lg sm:text-2xl text-white mb-6 min-h-[56px]">
               {text}
               <span className="text-[#00B87B] animate-pulse">|</span>
             </p>
           </div>
 
-          {/* BOTTOM PART (STICKY INSIDE THIS COLUMN) */}
-          <div className="mt-auto pb-4">
-            <div className="flex justify-center gap-3 text-3xl cursor-pointer">
+          {/* Bottom */}
+          <div className="mt-6 md:mt-auto pb-4">
+            <div className="flex justify-center gap-3 text-2xl sm:text-3xl cursor-pointer">
               <a
                 href="https://github.com/Ibrahimzeidan"
                 className="w-10 h-10 bg-white/10 flex items-center justify-center rounded hover:bg-[#00B87B] transition text-white"
@@ -109,7 +111,7 @@ function Cv() {
               </a>
             </div>
 
-            <hr className="text-white mt-4 mb-3" />
+            <hr className="border-white/20 mt-4 mb-3" />
 
             <button
               onClick={handleDownload}
@@ -118,12 +120,8 @@ function Cv() {
               Download CV
             </button>
           </div>
-
         </div>
       </div>
-
-      {/* Right side content */}
-      <div className="flex-1">{/* other components */}</div>
     </div>
   );
 }

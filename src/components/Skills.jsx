@@ -15,38 +15,47 @@ const skills = [
   { name: "Flutter", img: flutter },
   { name: "Dart", img: dart },
   { name: "Cpp", img: Cpp },
-  { name: "c", img: c },
-
-
+  { name: "C", img: c },
 ];
-function Skills(){
-  return(
-    <div>
-        <div><h2 className="text-white font-bold text-4xl">Skills </h2></div>
-        <div className="mt-5 flex items-center gap-4 mb-2">
-          <span className="w-3 h-3 border-2 border-white rounded-full" />
-          <span className="w-12 h-[2px] bg-white" /></div>
- <div className="grid grid-cols-2 md:grid-cols-4 gap-8 ">
-          {skills.map((s) => (
-            <div
-              key={s.name}
-              className="bg-white/5 p-8 rounded-xl flex flex-col items-center hover:bg-[#00B87B] transition-all duration-200 ease-out
-             hover:-translate-y-2 hover:scale-105
-             active:-translate-y-1 active:scale-95 cursor-pointer"
-            >
-              <img src={s.img} alt={s.name} className="w-16 h-16 mb-4  " />
-              <p className="text-white font-bold">{s.name}</p>
-            </div>
-          ))}
-        </div>
-         
-        
-        <div className="mt-12 text-white mb-12"><hr></hr></div>
 
-</div>
+function Skills() {
+  return (
+    <section className="w-full px-4 sm:px-6 md:px-0">
+      <h2 className="text-white font-bold text-3xl sm:text-4xl">
+        Skills
+      </h2>
 
-       
+      <div className="mt-4 sm:mt-5 flex items-center gap-3 sm:gap-4 mb-6">
+        <span className="w-3 h-3 border-2 border-white rounded-full" />
+        <span className="w-12 h-[2px] bg-white" />
+      </div>
 
-  )
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+        {skills.map((s) => (
+          <div
+            key={s.name}
+            className="bg-white/5 p-4 sm:p-6 md:p-8 rounded-xl flex flex-col items-center
+              hover:bg-[#00B87B] transition-all duration-200 ease-out
+              hover:-translate-y-2 hover:scale-105
+              active:-translate-y-1 active:scale-95 cursor-pointer"
+          >
+            <img
+              src={s.img}
+              alt={s.name}
+              className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mb-3 sm:mb-4"
+            />
+            <p className="text-white font-bold text-sm sm:text-base">
+              {s.name}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-10 sm:mt-12 text-white mb-12">
+        <hr className="border-white/20" />
+      </div>
+    </section>
+  );
 }
-export default Skills
+
+export default Skills;
