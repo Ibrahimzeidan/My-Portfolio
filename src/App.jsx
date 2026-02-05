@@ -11,32 +11,31 @@ import Education from './components/Education';
 
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-     <div className="max-h-screen bg-[#2C3E50] text-white">
-      <div className="mx-auto ml-4  flex gap-6 px-4 py-6">
-        
-       
-        <aside className="w-80 shrink-0 sticky top-6 self-start ">
-          <Cv />
-        </aside>
+    <div className="min-h-screen bg-[#2C3E50] text-white">
+      <div className="mx-auto max-w-7xl px-4 py-6">
+        <div className="flex flex-col md:flex-row md:gap-6">
+          
+          {/* Sidebar */}
+          <aside className="w-full md:w-80 md:shrink-0 md:sticky md:top-6 md:self-start">
+            <Cv />
+          </aside>
 
-      
-        <div className="flex-1 space-y-9 ml-13">
-          <About />
-          <Education/>
-           <Experience />
-          <Services />
-          <Skills />
-          <Footer />
+          {/* Right side */}
+          <main className="flex-1 space-y-9 mt-8 md:mt-0">
+            <About />
+            <Education />
+            <Experience />
+            <Services />
+            <Skills />
+            <Footer />
+          </main>
+
         </div>
-
       </div>
     </div>
-</>
-  )
+  );
 }
 
-export default App
+export default App;
+
