@@ -4,7 +4,8 @@ import fastApiScreenshot from "../assets/Screenshot 2026-04-14 002913.png";
 import driverHubScreenshot from "../assets/Screenshot_2026-03-04_at_8.54.40_AM.png";
 import blogapi from "../assets/Screenshot 2026-04-14 010217.png";
 import nestjs  from "../assets/Screenshot 2026-04-14 011321.png";
-
+import agri  from "../assets/agri-connect.png";
+import service  from "../assets/serviceapp.jpeg";
 
 const projects = [
   {
@@ -41,6 +42,20 @@ const projects = [
       "Bus management platform built with Next.js that assigns drivers to daily passengers, with subscription packages and organized passenger-driver relationships. Features real-time location tracking with map integration to monitor bus routes and driver positions.",
     image: driverHubScreenshot,
     github: "https://github.com/asmaachreih1/bus_updated",
+  },
+   {
+    title: "Agri-Connect Project",
+    description:
+      "AgriConnect is a platform that connects landowners with farmers, enabling collaboration and efficient land use. It allows users to invest in agricultural land and support farming projects through a simple web interface. The system was developed using Django for the backend and HTML/CSS for the frontend.",
+    image: agri,
+    github: "https://github.com/1mhmd1/AgriConnect",
+  },
+  {
+    title: "Service App",
+    description:
+      "Service App is a Flutter-based mobile application developed as a team project to assist tourists in  finding essential services such as restaurants, mechanics, and taxis. It provides a user-friendly interface to explore nearby options and improve the overall travel experience.",
+    image: service,
+    github: "https://github.com/ahmad-youness-2005/ServiceApp",
   },
 ];
 
