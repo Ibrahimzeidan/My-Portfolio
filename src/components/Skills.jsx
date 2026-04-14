@@ -4,9 +4,17 @@ import js from "../assets/js-icon.png";
 import react from "../assets/react-logo.png";
 import flutter from "../assets/flutter-icon.png";
 import dart from "../assets/dart-icon.png";
-import Cpp from "../assets/cpp-icon.png";
+import vue from "../assets/vue.png";
 import c from "../assets/c-icon.png";
-
+import express from "../assets/express-js.png";
+import nodejs from "../assets/node-js.png";
+import mongodb from "../assets/mongo.png";
+import fastapi from "../assets/api-fast.png";
+import fastify from "../assets/fastify.png";
+import nest from "../assets/nest.jpg";
+import next from "../assets/next-js.png";
+import python from "../assets/python.png";
+//import c from "../assets/c-icon.png";
 const skills = [
   { name: "HTML", img: html },
   { name: "CSS", img: css },
@@ -14,10 +22,18 @@ const skills = [
   { name: "React", img: react },
   { name: "Flutter", img: flutter },
   { name: "Dart", img: dart },
-  { name: "Cpp", img: Cpp },
+  { name: "vue", img: vue },
   { name: "C", img: c },
+  { name: "express", img: express },
+  { name: "Node.js", img: nodejs },
+  { name: "mongodb", img: mongodb },
+  { name: "fastapi", img: fastapi },
+  { name: "fastify", img: fastify },
+  { name: "nest", img: nest },
+  { name: "next", img: next },
+  { name: "python", img: python },
+    
 ];
-
 function Skills() {
   return (
     <section className="w-full px-4 sm:px-6 md:px-0">

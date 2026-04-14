@@ -2,21 +2,21 @@ function Experience() {
   const items = [
     {
       title: "Web Designer",
-      place: "Soft Company | 2022 – Present",
+      place: "Digital Hub InternShips |  Present",
       desc: `I design modern and responsive websites with a strong focus on user
       experience. My work includes creating clean layouts, improving usability,
       and ensuring compatibility across different devices and browsers.`,
     },
     {
       title: "Frontend Developer",
-      place: "Freelance | 2023 – Present",
+      place: "Digital Hub InternShips |  Present",
       desc: `I develop interactive user interfaces using React, JavaScript, and
       Tailwind CSS. I focus on performance, accessibility, and writing clean,
       reusable code for scalable applications.`,
     },
     {
       title: "Junior Full Stack Developer",
-      place: "Personal & University Projects | 2021 – 2023",
+      place: "Digital Hub InternShips | present",
       desc: `I worked on full stack projects that include frontend development,
       backend logic, and database integration. These projects helped me build a
       solid foundation in problem-solving and real-world application development.`,

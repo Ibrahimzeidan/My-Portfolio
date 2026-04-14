@@ -1,6 +1,42 @@
+import { useRef, useState } from "react";
 import { FaFacebookF, FaLinkedinIn, FaInstagram, FaGithub } from "react-icons/fa";
 
 function Footer() {
+  const formRef = useRef(null);
+  const [status, setStatus] = useState({ type: "", message: "" });
+  const [isSending, setIsSending] = useState(false);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setIsSending(true);
+    setStatus({ type: "", message: "" });
+
+    const formData = new FormData(formRef.current);
+    const name = formData.get("user_name")?.toString().trim() || "";
+    const email = formData.get("user_email")?.toString().trim() || "";
+    const subject = formData.get("subject")?.toString().trim() || "New message";
+    const message = formData.get("message")?.toString().trim() || "";
+
+    const bodyLines = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      "",
+      message,
+    ];
+
+    const mailto = `mailto:ibrahimzeidan09@gmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
+
+    window.location.href = mailto;
+
+    setStatus({
+      type: "success",
+      message: "Opening your email app...",
+    });
+    setIsSending(false);
+  };
+
   return (
     <section className="w-full px-4 sm:px-6 md:px-0 pb-10">
       {/* Title */}
@@ -14,18 +50,22 @@ function Footer() {
       </div>
 
       {/* Form */}
-      <form className="max-w-6xl space-y-4">
+      <form ref={formRef} onSubmit={handleSubmit} className="max-w-6xl space-y-4">
         {/* Name + Email */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <input
             type="text"
             placeholder="Your Name"
+            name="user_name"
+            required
             className="w-full bg-transparent text-white font-bold border-2 border-[#314355] p-3 rounded-md shadow-xl focus:border-[#00B87B] outline-none"
           />
 
           <input
             type="email"
             placeholder="Your Email"
+            name="user_email"
+            required
             className="w-full bg-transparent text-white font-bold border-2 border-[#314355] p-3 rounded-md shadow-xl focus:border-[#00B87B] outline-none"
           />
         </div>
@@ -34,6 +74,8 @@ function Footer() {
         <input
           type="text"
           placeholder="Subject"
+          name="subject"
+          required
           className="w-full bg-transparent text-white font-bold border-2 border-[#314355] p-3 rounded-md shadow-xl focus:border-[#00B87B] outline-none"
         />
 
@@ -41,6 +83,8 @@ function Footer() {
         <textarea
           placeholder="Message"
           rows="6"
+          name="message"
+          required
           className="w-full bg-transparent text-white font-bold border-2 border-[#314355] p-3 rounded-md shadow-xl focus:border-[#00B87B] outline-none resize-none"
         />
 
@@ -48,11 +92,22 @@ function Footer() {
         <div className="flex justify-center">
           <button
             type="submit"
-            className="px-8 py-3 bg-[#00B87B] text-white font-semibold rounded-md hover:opacity-90 transition"
+            disabled={isSending}
+            className="px-8 py-3 bg-[#00B87B] text-white font-semibold rounded-md hover:opacity-90 transition disabled:opacity-70 disabled:cursor-not-allowed"
           >
-            Send Message
+            {isSending ? "Sending..." : "Send Message"}
           </button>
         </div>
+
+        {status.message ? (
+          <p
+            className={`text-center text-sm ${
+              status.type === "success" ? "text-green-300" : "text-red-300"
+            }`}
+          >
+            {status.message}
+          </p>
+        ) : null}
       </form>
 
       {/* Footer Bottom */}

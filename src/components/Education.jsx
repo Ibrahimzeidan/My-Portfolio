@@ -1,27 +1,26 @@
 function Education() {
   const educationData = [
+    {title: "Full Stack Web Developer",
+      school: "DigitalHub",
+      date: "2026 MY",
+      details: [
+        "Learned React, NestJS, Express, MERN, Vue",
+        "Built APIs with Fastify and FastAPI",
+      ],
+    },
     {
-      title: "Bachelor in Computer Science",
-      school: "Your University Name",
-      date: "2023 — Present",
+        title: "Bachelor in Computer Science",
+      school: "Beirut Arab University",
+      date: "2025 Dec",
       details: [
         "Relevant courses: Web Development, Data Structures, Databases",
         "Focused on front-end and full-stack projects",
       ],
     },
     {
-      title: "Front-End Development Certificate",
-      school: "FreeCodeCamp / Udemy (example)",
-      date: "2024",
-      details: [
-        "Built responsive pages using HTML, CSS, JavaScript",
-        "React fundamentals + component-based UI",
-      ],
-    },
-    {
       title: "High School Diploma",
-      school: "Your School Name",
-      date: "2020 — 2023",
+      school: "Bisssan secondary school ",
+      date: "2022",
       details: ["General education with strong focus on math and science"],
     },
   ];
@@ -79,3 +78,4 @@ function Education() {
 }
 
 export default Education;
+
