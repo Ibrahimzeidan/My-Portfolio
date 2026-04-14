@@ -9,7 +9,7 @@ const featuredProjects = [
       "A dynamic real estate website built with Next.js featuring property listings, blogs, and services, along with an admin dashboard for managing content and user inquiries.",
     image: realstate,
     github: "https://github.com/Ibrahimzeidan/real-state",
-    live: "https://your-live-demo-1.com",
+    live: "https://real-state-624s.onrender.com",
   },
   {
     title: "Task Manager",
