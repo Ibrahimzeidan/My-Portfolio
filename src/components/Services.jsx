@@ -14,7 +14,7 @@ const featuredProjects = [
   {
     title: "Task Manager",
     description:
-      "A simple Task Manager built with Vue.js and Fastify to learn how frontend and backend work together using REST APIs for creating and managing tasks.",
+      "A simple Task Manager application built with Vue.js for the frontend and Fastify for the backend, designed to demonstrate how client and server communicate through RESTful APIs. The app allows users to create, view, update, and delete tasks, providing a clear example of full CRUD operations.",
     image: task,  
     github: "https://github.com/Ibrahimzeidan/vue-fastify",
     live: "https://vue-fastify-exle-hlop2dfaf-ibrahimzeidans-projects.vercel.app/tasks",
