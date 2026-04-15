@@ -6,6 +6,7 @@ import blogapi from "../assets/Screenshot 2026-04-14 010217.png";
 import nestjs  from "../assets/Screenshot 2026-04-14 011321.png";
 import agri  from "../assets/agri-connect.png";
 import service  from "../assets/serviceapp.jpeg";
+import realstate  from "../assets/realstate.png";
 
 const projects = [
   {
@@ -23,11 +24,11 @@ const projects = [
     github: "https://github.com/Ibrahimzeidan/fast-api",
   },
   {
-    title: "Blog-api Project",
-    description:
-      "MERN stack blog application built using MongoDB, Express.js, React, and Node.js, providing full CRUD functionality for managing blog posts and users. Designed with a responsive frontend and scalable backend architecture for efficient content management.",
-    image: blogapi,
-    github: "https://github.com/Zahraa-Salim/blog-api",
+    title: "Real state ",
+       description:
+         "A dynamic real estate website built with Next.js featuring property listings, blogs, and services, along with an admin dashboard for managing content and user inquiries.",
+       image: realstate,
+       github: "https://github.com/Ibrahimzeidan/real-state",
   },
    {
     title: "Nest-js Project",

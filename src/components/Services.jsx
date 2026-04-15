@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 import { FaCode, FaAndroid } from "react-icons/fa";
-import realstate  from "../assets/realstate.png";
 import task  from "../assets/task.png";
+import blogapi from "../assets/Screenshot 2026-04-14 010217.png";
 const featuredProjects = [
   {
-    title: "Real state ",
-    description:
-      "A dynamic real estate website built with Next.js featuring property listings, blogs, and services, along with an admin dashboard for managing content and user inquiries.",
-    image: realstate,
-    github: "https://github.com/Ibrahimzeidan/real-state",
-    live: "https://real-state-624s.onrender.com",
+   title: "Blog-api Project",
+        description:
+          "MERN stack blog application built using MongoDB, Express.js, React, and Node.js, providing full CRUD functionality for managing blog posts and users. Designed with a responsive frontend and scalable backend architecture for efficient content management.",
+        image: blogapi,
+        github: "https://github.com/Zahraa-Salim/blog-api",
+    live: "https://blog-api-lrj5-6dgt601lf-ibrahimzeidans-projects.vercel.app/dashboard/authors",
   },
   {
     title: "Task Manager",
